@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Schema;
 
 namespace CarLotSimulator
 {
@@ -15,8 +16,35 @@ namespace CarLotSimulator
 
 
             //Now that the Car class is created we can instanciate 3 new cars
+            var bryansCar = new Car();
+            bryansCar.Make = "Honda";
+            bryansCar.Model = "Accord";
+            bryansCar.Year = 2004;
+            bryansCar.EngineNoise = "V4";
+            bryansCar.HonkNoise = "High pitched beep";
+            bryansCar.IsDriveable = true;
+
+            var katesCar = new Car()
+            {
+                Make = "Volkswagon",
+                Model = "Tiguan",
+                Year = 2008,
+                EngineNoise = "V6",
+                HonkNoise = "mid range beep",
+                IsDriveable = false,
+            };
+
+            var ericsCar = new Car(2018, "Honda", "Civic Type-R", "turbo V6", "mid range honk", true);
+
+
+
+
             //Set the properties for each of the cars
             //Call each of the methods for each car
+            bryansCar.MakeEngineNoise(bryansCar.EngineNoise);
+            katesCar.MakeEngineNoise(katesCar.EngineNoise);
+            ericsCar.MakeEngineNoise(ericsCar.EngineNoise);
+
 
             //*************BONUS*************//
 
